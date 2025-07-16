@@ -12,8 +12,32 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
+    <!-- AOS Animate On Scroll CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="style.css" />
-    <script src="scrpt.js"></script>
+
+    <!-- Style for Gallery (kept from previous request for a clean grid) -->
+    <style>
+      .gallery-container {
+        display: grid;
+        gap: 1.5rem; 
+        grid-template-columns: repeat(1, 1fr);
+      }
+      @media (min-width: 576px) {
+        .gallery-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 992px) {
+        .gallery-container {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    </style>
+
+    <!-- Note: The scrpt.js file is linked here. AOS JS is linked at the bottom of the body. -->
+    <script src="scrpt.js" defer></script>
   </head>
   <body>
     <!-- Floating 3D Shapes -->
@@ -25,7 +49,7 @@
     </div>
 
     <!-- Header -->
-    <header id="header">
+    <header id="header" data-aos="fade-down">
       <div class="container">
         <div class="header-container">
           <a href="#" class="logo">
@@ -60,18 +84,18 @@
     <section class="hero" id="home">
       <div class="container">
         <div class="hero-content">
-          <h1>Experience Coffee in a New Dimension</h1>
-          <p>
+          <h1 data-aos="fade-up">Experience Coffee in a New Dimension</h1>
+          <p data-aos="fade-up" data-aos-delay="200">
             Welcome to Nebula Café, where futuristic design meets artisanal
             coffee craftsmanship. Our quantum-brewed beverages will transport
             your senses to another realm.
           </p>
-          <div class="hero-buttons">
+          <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
             <a href="#menu" class="btn btn-primary">Explore Menu</a>
             <a href="#contact" class="btn btn-secondary">Book a Table</a>
           </div>
         </div>
-        <div class="hero-image">
+        <div class="hero-image" data-aos="fade-left" data-aos-delay="500">
           <div class="coffee-cup"></div>
         </div>
       </div>
@@ -80,7 +104,7 @@
     <!-- About Section -->
     <section class="about" id="about">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <h2>Our Cosmic Journey</h2>
           <p>
             From a small idea in the vast universe to a revolutionary coffee
@@ -89,14 +113,14 @@
         </div>
 
         <div class="about-content">
-          <div class="about-image">
+          <div class="about-image" data-aos="fade-right">
             <img
               src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZnV0dXJpc3RpYyUyMGNhZmUlMjBpbnRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
               alt="Nebula Café Interior"
             />
           </div>
 
-          <div class="about-text">
+          <div class="about-text" data-aos="fade-left">
             <h3>Redefining the Coffee Experience</h3>
             <p>
               Founded in 2023, Nebula Café emerged from a vision to blend
@@ -112,7 +136,7 @@
             </p>
 
             <div class="about-features">
-              <div class="feature-item">
+              <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
                 <div class="feature-icon">
                   <i class="fas fa-atom"></i>
                 </div>
@@ -122,7 +146,7 @@
                 </div>
               </div>
 
-              <div class="feature-item">
+              <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
                 <div class="feature-icon">
                   <i class="fas fa-leaf"></i>
                 </div>
@@ -132,7 +156,7 @@
                 </div>
               </div>
 
-              <div class="feature-item">
+              <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
                 <div class="feature-icon">
                   <i class="fas fa-robot"></i>
                 </div>
@@ -142,7 +166,7 @@
                 </div>
               </div>
 
-              <div class="feature-item">
+              <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
                 <div class="feature-icon">
                   <i class="fas fa-globe-americas"></i>
                 </div>
@@ -160,7 +184,7 @@
     <!-- Menu Section -->
     <section class="menu" id="menu">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <h2>Quantum Menu</h2>
           <p>
             Explore our interdimensional selection of beverages and cosmic
@@ -168,7 +192,7 @@
           </p>
         </div>
 
-        <div class="menu-tabs">
+        <div class="menu-tabs" data-aos="fade-up" data-aos-delay="100">
           <button class="menu-tab active" data-category="all">All</button>
           <button class="menu-tab" data-category="coffee">Coffee</button>
           <button class="menu-tab" data-category="tea">Tea</button>
@@ -176,311 +200,382 @@
           <button class="menu-tab" data-category="food">Food</button>
         </div>
 
-      <div class="menu-grid">
-    <!-- Original: Nebula Latte -->
-    <div class="menu-item" data-category="coffee">
-        <div class="menu-item-image">
-            <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=500&q=60" alt="Nebula Latte">
-        </div>
-        <div class="menu-item-content">
-            <div class="menu-item-header">
+        <div class="menu-grid">
+          <!-- Original: Nebula Latte -->
+          <div class="menu-item" data-category="coffee" data-aos="zoom-in-up">
+            <div class="menu-item-image">
+              <img
+                src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=500&q=60"
+                alt="Nebula Latte"
+              />
+            </div>
+            <div class="menu-item-content">
+              <div class="menu-item-header">
                 <h3 class="menu-item-title">Nebula Latte</h3>
                 <span class="menu-item-price">$6.99</span>
-            </div>
-            <p class="menu-item-description">Our signature drink with holographic foam that changes color as you sip, infused with edible stardust.</p>
-            <div class="menu-item-footer">
+              </div>
+              <p class="menu-item-description">
+                Our signature drink with holographic foam that changes color as
+                you sip, infused with edible stardust.
+              </p>
+              <div class="menu-item-footer">
                 <div class="menu-item-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
                 </div>
                 <button class="menu-item-button">Add to Order</button>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
 
-    <!-- Original: Quantum Cold Brew -->
-    <div class="menu-item" data-category="special">
-        <div class="menu-item-image">
-            <img src="https://images.unsplash.com/photo-1551029506-0807df4e2031?auto=format&fit=crop&w=500&q=60" alt="Quantum Cold Brew">
-        </div>
-        <div class="menu-item-content">
-            <div class="menu-item-header">
+          <!-- Original: Quantum Cold Brew -->
+          <div class="menu-item" data-category="special" data-aos="zoom-in-up" data-aos-delay="100">
+            <div class="menu-item-image">
+              <img
+                src="https://images.unsplash.com/photo-1551029506-0807df4e2031?auto=format&fit=crop&w=500&q=60"
+                alt="Quantum Cold Brew"
+              />
+            </div>
+            <div class="menu-item-content">
+              <div class="menu-item-header">
                 <h3 class="menu-item-title">Quantum Cold Brew</h3>
                 <span class="menu-item-price">$7.49</span>
-            </div>
-            <p class="menu-item-description">Slow-extracted for 24 hours in zero-gravity conditions, served with glowing ice cubes.</p>
-            <div class="menu-item-footer">
+              </div>
+              <p class="menu-item-description">
+                Slow-extracted for 24 hours in zero-gravity conditions, served
+                with glowing ice cubes.
+              </p>
+              <div class="menu-item-footer">
                 <div class="menu-item-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
                 </div>
                 <button class="menu-item-button">Add to Order</button>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
 
-    <!-- Original: Galaxy Matcha -->
-    <div class="menu-item" data-category="tea">
-        <div class="menu-item-image">
-            <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?auto=format&fit=crop&w=500&q=60" alt="Galaxy Matcha">
-        </div>
-        <div class="menu-item-content">
-            <div class="menu-item-header">
+          <!-- Original: Galaxy Matcha -->
+          <div class="menu-item" data-category="tea" data-aos="zoom-in-up" data-aos-delay="200">
+            <div class="menu-item-image">
+              <img
+                src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?auto=format&fit=crop&w=500&q=60"
+                alt="Galaxy Matcha"
+              />
+            </div>
+            <div class="menu-item-content">
+              <div class="menu-item-header">
                 <h3 class="menu-item-title">Galaxy Matcha</h3>
                 <span class="menu-item-price">$5.99</span>
-            </div>
-            <p class="menu-item-description">Ceremonial-grade matcha blended with cosmic spirulina, creating a swirling galaxy effect.</p>
-            <div class="menu-item-footer">
+              </div>
+              <p class="menu-item-description">
+                Ceremonial-grade matcha blended with cosmic spirulina, creating
+                a swirling galaxy effect.
+              </p>
+              <div class="menu-item-footer">
                 <div class="menu-item-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
                 </div>
                 <button class="menu-item-button">Add to Order</button>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
 
-    <!-- Original: Astro Waffles -->
-    <div class="menu-item" data-category="food">
-        <div class="menu-item-image">
-            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=60" alt="Astro Waffles">
-        </div>
-        <div class="menu-item-content">
-            <div class="menu-item-header">
+          <!-- Original: Astro Waffles -->
+          <div class="menu-item" data-category="food" data-aos="zoom-in-up" data-aos-delay="300">
+            <div class="menu-item-image">
+              <img
+                src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=60"
+                alt="Astro Waffles"
+              />
+            </div>
+            <div class="menu-item-content">
+              <div class="menu-item-header">
                 <h3 class="menu-item-title">Astro Waffles</h3>
                 <span class="menu-item-price">$9.99</span>
-            </div>
-            <p class="menu-item-description">3D-printed waffles in constellation patterns, served with meteorite syrup and comet cream.</p>
-            <div class="menu-item-footer">
+              </div>
+              <p class="menu-item-description">
+                3D-printed waffles in constellation patterns, served with
+                meteorite syrup and comet cream.
+              </p>
+              <div class="menu-item-footer">
                 <div class="menu-item-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
                 </div>
                 <button class="menu-item-button">Add to Order</button>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
 
-    <!-- Original: Black Hole Mocha -->
-    <div class="menu-item" data-category="coffee">
-        <div class="menu-item-image">
-            <img src="https://images.unsplash.com/photo-1534685785745-60a2cea0ec34?auto=format&fit=crop&w=500&q=60" alt="Black Hole Mocha">
-        </div>
-        <div class="menu-item-content">
-            <div class="menu-item-header">
+          <!-- Original: Black Hole Mocha -->
+          <div class="menu-item" data-category="coffee" data-aos="zoom-in-up" data-aos-delay="400">
+            <div class="menu-item-image">
+              <img
+                src="https://images.unsplash.com/photo-1534685785745-60a2cea0ec34?auto=format&fit=crop&w=500&q=60"
+                alt="Black Hole Mocha"
+              />
+            </div>
+            <div class="menu-item-content">
+              <div class="menu-item-header">
                 <h3 class="menu-item-title">Black Hole Mocha</h3>
                 <span class="menu-item-price">$6.49</span>
-            </div>
-            <p class="menu-item-description">Dark chocolate espresso with gravitational pull, topped with collapsing foam that disappears into your cup.</p>
-            <div class="menu-item-footer">
+              </div>
+              <p class="menu-item-description">
+                Dark chocolate espresso with gravitational pull, topped with
+                collapsing foam that disappears into your cup.
+              </p>
+              <div class="menu-item-footer">
                 <div class="menu-item-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
                 </div>
                 <button class="menu-item-button">Add to Order</button>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
 
-    <!-- Original: Plasma Punch -->
-    <div class="menu-item" data-category="special">
-        <div class="menu-item-image">
-            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=500&q=60" alt="Plasma Punch">
-        </div>
-        <div class="menu-item-content">
-            <div class="menu-item-header">
+          <!-- Original: Plasma Punch -->
+          <div class="menu-item" data-category="special" data-aos="zoom-in-up" data-aos-delay="500">
+            <div class="menu-item-image">
+              <img
+                src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=500&q=60"
+                alt="Plasma Punch"
+              />
+            </div>
+            <div class="menu-item-content">
+              <div class="menu-item-header">
                 <h3 class="menu-item-title">Plasma Punch</h3>
                 <span class="menu-item-price">$8.99</span>
-            </div>
-            <p class="menu-item-description">An electrifying blend of tropical fruits with ionized bubbles that crackle on your tongue.</p>
-            <div class="menu-item-footer">
+              </div>
+              <p class="menu-item-description">
+                An electrifying blend of tropical fruits with ionized bubbles
+                that crackle on your tongue.
+              </p>
+              <div class="menu-item-footer">
                 <div class="menu-item-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
                 </div>
                 <button class="menu-item-button">Add to Order</button>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
 
-    <!-- ✅ NEW: Cosmic Cappuccino -->
-    <div class="menu-item" data-category="special">
-        <div class="menu-item-image">
-            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=500&h=200&q=60" alt="Cosmic Cappuccino">
-        </div>
-        <div class="menu-item-content">
-            <div class="menu-item-header">
+          <!-- ✅ NEW: Cosmic Cappuccino -->
+          <div class="menu-item" data-category="special" data-aos="zoom-in-up" data-aos-delay="600">
+            <div class="menu-item-image">
+              <img
+                src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=500&h=200&q=60"
+                alt="Cosmic Cappuccino"
+              />
+            </div>
+            <div class="menu-item-content">
+              <div class="menu-item-header">
                 <h3 class="menu-item-title">Cosmic Cappuccino</h3>
                 <span class="menu-item-price">$6.75</span>
-            </div>
-            <p class="menu-item-description">A rich espresso topped with cosmic dust foam that sparkles under UV light.</p>
-            <div class="menu-item-footer">
+              </div>
+              <p class="menu-item-description">
+                A rich espresso topped with cosmic dust foam that sparkles under
+                UV light.
+              </p>
+              <div class="menu-item-footer">
                 <div class="menu-item-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
                 </div>
                 <button class="menu-item-button">Add to Order</button>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
 
-    <!-- ✅ NEW: Stellar Chai Fusion -->
-    <div class="menu-item" data-category="tea">
-        <div class="menu-item-image">
-            <img src="https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&h=200&w=500" alt="Stellar Chai Fusion">
-        </div>
-        <div class="menu-item-content">
-            <div class="menu-item-header">
+          <!-- ✅ NEW: Stellar Chai Fusion -->
+          <div class="menu-item" data-category="tea" data-aos="zoom-in-up" data-aos-delay="700">
+            <div class="menu-item-image">
+              <img
+                src="https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&h=200&w=500"
+                alt="Stellar Chai Fusion"
+              />
+            </div>
+            <div class="menu-item-content">
+              <div class="menu-item-header">
                 <h3 class="menu-item-title">Stellar Chai Fusion</h3>
                 <span class="menu-item-price">$5.89</span>
-            </div>
-            <p class="menu-item-description">An intergalactic blend of spiced chai and starfruit essence, served steaming from a glowing mug.</p>
-            <div class="menu-item-footer">
+              </div>
+              <p class="menu-item-description">
+                An intergalactic blend of spiced chai and starfruit essence,
+                served steaming from a glowing mug.
+              </p>
+              <div class="menu-item-footer">
                 <div class="menu-item-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                    <i class="far fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <i class="far fa-star"></i>
                 </div>
                 <button class="menu-item-button">Add to Order</button>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
-
+      </div>
+    </section>
 
     <!-- Gallery Section -->
-   <section class="gallery" id="gallery">
-    <div class="container">
-        <div class="section-title">
-            <h2>Cosmic Moments</h2>
-            <p>Glimpses of our otherworldly café experience</p>
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Cosmic Moments</h2>
+          <p>Glimpses of our otherworldly café experience</p>
         </div>
 
         <div class="gallery-container">
-            <!-- Original: Interior -->
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=500&q=60" alt="Café Interior">
-                <div class="gallery-item-overlay">
-                    <div>
-                        <h3 class="gallery-item-title">Our Space</h3>
-                        <p class="gallery-item-category">Interior Design</p>
-                    </div>
-                </div>
+          <!-- Original: Interior -->
+          <div class="gallery-item" data-aos="zoom-in">
+            <img
+              src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=500&q=60"
+              alt="Café Interior"
+            />
+            <div class="gallery-item-overlay">
+              <div>
+                <h3 class="gallery-item-title">Our Space</h3>
+                <p class="gallery-item-category">Interior Design</p>
+              </div>
             </div>
+          </div>
 
-            <!-- Original: Latte -->
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=500&q=60" alt="Signature Drink">
-                <div class="gallery-item-overlay">
-                    <div>
-                        <h3 class="gallery-item-title">Nebula Latte</h3>
-                        <p class="gallery-item-category">Signature Drink</p>
-                    </div>
-                </div>
+          <!-- Original: Latte -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+            <img
+              src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=500&q=60"
+              alt="Signature Drink"
+            />
+            <div class="gallery-item-overlay">
+              <div>
+                <h3 class="gallery-item-title">Nebula Latte</h3>
+                <p class="gallery-item-category">Signature Drink</p>
+              </div>
             </div>
+          </div>
 
-            <!-- Original: Plasma Punch -->
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=500&q=60" alt="Special Beverage">
-                <div class="gallery-item-overlay">
-                    <div>
-                        <h3 class="gallery-item-title">Plasma Punch</h3>
-                        <p class="gallery-item-category">Special Beverage</p>
-                    </div>
-                </div>
+          <!-- Original: Plasma Punch -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+            <img
+              src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=500&q=60"
+              alt="Special Beverage"
+            />
+            <div class="gallery-item-overlay">
+              <div>
+                <h3 class="gallery-item-title">Plasma Punch</h3>
+                <p class="gallery-item-category">Special Beverage</p>
+              </div>
             </div>
+          </div>
 
-            <!-- Original: Waffles -->
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=60" alt="Astro Waffles">
-                <div class="gallery-item-overlay">
-                    <div>
-                        <h3 class="gallery-item-title">Astro Waffles</h3>
-                        <p class="gallery-item-category">Food</p>
-                    </div>
-                </div>
+          <!-- Original: Waffles -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+            <img
+              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=60"
+              alt="Astro Waffles"
+            />
+            <div class="gallery-item-overlay">
+              <div>
+                <h3 class="gallery-item-title">Astro Waffles</h3>
+                <p class="gallery-item-category">Food</p>
+              </div>
             </div>
+          </div>
 
-            <!-- Original: Matcha -->
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?auto=format&fit=crop&w=500&q=60" alt="Galaxy Matcha">
-                <div class="gallery-item-overlay">
-                    <div>
-                        <h3 class="gallery-item-title">Galaxy Matcha</h3>
-                        <p class="gallery-item-category">Tea</p>
-                    </div>
-                </div>
+          <!-- Original: Matcha -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+            <img
+              src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?auto=format&fit=crop&w=500&q=60"
+              alt="Galaxy Matcha"
+            />
+            <div class="gallery-item-overlay">
+              <div>
+                <h3 class="gallery-item-title">Galaxy Matcha</h3>
+                <p class="gallery-item-category">Tea</p>
+              </div>
             </div>
+          </div>
 
-            <!-- Original: Cold Brew -->
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1551029506-0807df4e2031?auto=format&fit=crop&w=500&q=60" alt="Quantum Cold Brew">
-                <div class="gallery-item-overlay">
-                    <div>
-                        <h3 class="gallery-item-title">Quantum Cold Brew</h3>
-                        <p class="gallery-item-category">Specialty</p>
-                    </div>
-                </div>
+          <!-- Original: Cold Brew -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+            <img
+              src="https://images.unsplash.com/photo-1551029506-0807df4e2031?auto=format&fit=crop&w=500&q=60"
+              alt="Quantum Cold Brew"
+            />
+            <div class="gallery-item-overlay">
+              <div>
+                <h3 class="gallery-item-title">Quantum Cold Brew</h3>
+                <p class="gallery-item-category">Specialty</p>
+              </div>
             </div>
+          </div>
 
-            <!-- ✅ New: Galactic Bar -->
-            <div class="gallery-item">
-                <img src="https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&h=250&w=400" alt="Galactic Bar">
-                <div class="gallery-item-overlay">
-                    <div>
-                        <h3 class="gallery-item-title">Galactic Bar</h3>
-                        <p class="gallery-item-category">Interior Design</p>
-                    </div>
-                </div>
+          <!-- Original: Galactic Bar -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
+            <img
+              src="https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&h=250&w=400"
+              alt="Galactic Bar"
+            />
+            <div class="gallery-item-overlay">
+              <div>
+                <h3 class="gallery-item-title">Galactic Bar</h3>
+                <p class="gallery-item-category">Interior Design</p>
+              </div>
             </div>
+          </div>
 
-            <!-- ✅ New: Celestial Brew -->
-            <div class="gallery-item">
-                <img src="https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg?auto=compress&cs=tinysrgb&h=250&w=400" alt="Celestial Brew">
-                <div class="gallery-item-overlay">
-                    <div>
-                        <h3 class="gallery-item-title">Celestial Brew</h3>
-                        <p class="gallery-item-category">Specialty Drink</p>
-                    </div>
-                </div>
+          <!-- Original: Celestial Brew -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="700">
+            <img
+              src="https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg?auto=compress&cs=tinysrgb&h=250&w=400"
+              alt="Celestial Brew"
+            />
+            <div class="gallery-item-overlay">
+              <div>
+                <h3 class="gallery-item-title">Celestial Brew</h3>
+                <p class="gallery-item-category">Specialty Drink</p>
+              </div>
             </div>
-        </div>
-    </div>
-</section>
+          </div>
+    </section>
 
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <h2>Celestial Reviews</h2>
           <p>What our interstellar visitors say about their experience</p>
         </div>
 
         <div class="testimonials-grid">
-          <div class="testimonial-card">
+          <div class="testimonial-card" data-aos="fade-up">
             <div class="testimonial-rating">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -507,7 +602,7 @@
             </div>
           </div>
 
-          <div class="testimonial-card">
+          <div class="testimonial-card" data-aos="fade-up" data-aos-delay="150">
             <div class="testimonial-rating">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -535,7 +630,7 @@
             </div>
           </div>
 
-          <div class="testimonial-card">
+          <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
             <div class="testimonial-rating">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -564,19 +659,18 @@
           </div>
         </div>
       </div>
-      
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <h2>Warp to Our Location</h2>
           <p>Visit us or send a transmission through the cosmos</p>
         </div>
 
         <div class="contact-container">
-          <div class="contact-info">
+          <div class="contact-info" data-aos="fade-right">
             <div class="contact-info-item">
               <div class="contact-info-icon">
                 <i class="fas fa-map-marker-alt"></i>
@@ -630,7 +724,7 @@
             </div>
           </div>
 
-          <div class="contact-form">
+          <div class="contact-form" data-aos="fade-left">
             <form id="contactForm">
               <div class="form-group">
                 <label for="name" class="form-label">Your Name</label>
@@ -662,7 +756,7 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer data-aos="fade-up">
       <div class="container">
         <div class="footer-container">
           <div class="footer-about">
@@ -730,12 +824,23 @@
 
         <div class="footer-bottom">
           <p>
-            &copy; 2023 Nebula Café. All rights reserved. | Designed with
+            © 2023 Nebula Café. All rights reserved. | Designed with
             <i class="fas fa-heart" style="color: var(--accent)"></i> in the
             cosmos
           </p>
         </div>
       </div>
     </footer>
+
+    <!-- AOS Animate On Scroll JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, // values from 0 to 3000, with step 50ms
+        once: true, // whether animation should happen only once - while scrolling down
+        offset: 100, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+      });
+    </script>
   </body>
 </html>
